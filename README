@@ -1,21 +1,25 @@
-Quickly bootstrap a Django app using virtualenvwrapper
+# Quickly bootstrap a Django app using virtualenvwrapper
 
 Requires:
-- virtualenv
-- virtualenvwrapper
-- git
+* virtualenvwrapper (install with 'sudo pip install virtualenvwrapper')
+* git (only if your project template is a git repo)
 
-Installation:
+## Installation:
 
-`pip install virtualenvwrapper.django_template`
+    pip install virtualenvwrapper.django_template`
 
-To use:
+## To use:
 
-mkproject -t django <project_name>
+    mkproject -t django_template <project_name> <django_boilerplate>
 
-Uses a default template from <https://github.com/twitter/bootstrap> to get you started.
+The django_boilerplate argument is anything that the 'django startproject' accepts, meaning:
 
+* a url pointing to an archive, eg.: https://github.com/driesdesmet/django-cms-boilerplate/archive/master.zip
+* a local directory
 
-In order to use your own project template, you must set an environment variable
+So, if you would like to start a django-cms project within a virtual enviroment that automaticlly sets up a database, fabric
+and everything you need to start working on a new website with one command, simply run:
 
-`export DJANGO_TEMPLATE=/opt/project_templates/my_other_django_template; mkproject -t django <project_name>`
+    mkproject -t django_tempolate mynewsite https://github.com/driesdesmet/django-cms-boilerplate/archive/master.zip
+
+Good luck!
